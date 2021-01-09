@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  admin:
+    build: .
+    container_name: adminapp
+    restart: always
+    ports: 
+    - 80:8080
