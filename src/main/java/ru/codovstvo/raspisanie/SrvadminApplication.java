@@ -1,4 +1,4 @@
-package ru.codovstvo.srvadmin;
+package ru.codovstvo.raspisanie;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

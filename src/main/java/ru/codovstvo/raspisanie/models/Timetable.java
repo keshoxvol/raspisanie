@@ -1,12 +1,11 @@
-package ru.codovstvo.raspisanie;
+package ru.codovstvo.raspisanie.models;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import java.sql.Time;
-import java.util.Date;
 
 @Entity
 public class Timetable {

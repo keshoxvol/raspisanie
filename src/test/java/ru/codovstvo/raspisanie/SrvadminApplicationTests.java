@@ -1,4 +1,4 @@
-package ru.codovstvo.srvadmin;
+package ru.codovstvo.raspisanie;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
