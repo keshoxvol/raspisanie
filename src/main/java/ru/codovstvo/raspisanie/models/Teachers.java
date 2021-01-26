@@ -13,6 +13,16 @@ public class Teachers {
     private String name;
 
     
+    public Teachers(Integer id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+    
+    public Teachers() {
+	}  
+
+
     /**
      * @return Integer return the id
      */

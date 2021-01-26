@@ -13,6 +13,16 @@ public class Things {
     private String name;
 
 
+    public Things(Integer id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+    
+    public Things() {
+	}
+    
+
     /**
      * @return Integer return the id
      */

@@ -1,7 +1,5 @@
 package ru.codovstvo.raspisanie.models;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,22 +13,27 @@ public class Timetable {
     
     private String thing;
 
-    private String group;
+    private String party;
 
-    private Date date;
+    private String date;
     
     private String audience;
     
     private String teacher;
     
-    public Timetable(Integer id, String thing, String group, Date date, String audience, String teacher){
+    public Timetable(Integer id, String thing, String party, String date, String audience, String teacher){
         this.id = id;
         this.thing = thing;
-        this.group = group;
+        this.party = party;
         this.date = date;
         this.audience = audience;
         this.teacher = teacher;
     }
+    
+    public Timetable() {
+	}
+
+
     /**
      * @return Integer return the id
      */
@@ -60,17 +63,31 @@ public class Timetable {
     }
 
     /**
-     * @return String return the group
+     * @return String return the party
      */
-    public String getGroup() {
-        return group;
+    public String getparty() {
+        return party;
     }
 
     /**
-     * @param group the group to set
+     * @param party the party to set
      */
-    public void setGroup(String group) {
-        this.group = group;
+    public void setparty(String party) {
+        this.party = party;
+    }
+
+    /**
+     * @return String return the date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        this.date = date;
     }
 
     /**
@@ -99,21 +116,6 @@ public class Timetable {
      */
     public void setTeacher(String teacher) {
         this.teacher = teacher;
-    }
-
-
-    /**
-     * @return Date return the date
-     */
-    public Date getDate() {
-        return date;
-    }
-
-    /**
-     * @param date the date to set
-     */
-    public void setDate(Date date) {
-        this.date = date;
     }
 
 }
