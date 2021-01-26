@@ -21,8 +21,7 @@ public class Timetable {
     
     private String teacher;
     
-    public Timetable(Integer id, String thing, String party, String date, String audience, String teacher){
-        this.id = id;
+    public Timetable(String thing, String party, String date, String audience, String teacher){
         this.thing = thing;
         this.party = party;
         this.date = date;

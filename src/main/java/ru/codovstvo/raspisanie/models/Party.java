@@ -10,13 +10,11 @@ public class Party {
     @Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    private String name;
+    private String title;
 
     
-    public Party(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
+    public Party( String title) {
+		this.title = title;
 	}
     
     public Party() {
@@ -38,17 +36,17 @@ public class Party {
     }
 
     /**
-     * @return String return the name
+     * @return String return the title
      */
-    public String getName() {
-        return name;
+    public String gettitle() {
+        return title;
     }
 
     /**
-     * @param name the name to set
+     * @param title the title to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void settitle(String title) {
+        this.title = title;
     }
 
 }
