@@ -5,48 +5,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 @Entity
 public class Party {
     @Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Long id;
+    
     private String title;
+    private int numberPeoples;
 
-    
-    public Party( String title) {
-		this.title = title;
-	}
-    
-    public Party() {
-	}
-
-
-    /**
-     * @return Integer return the id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * @return String return the title
-     */
-    public String gettitle() {
-        return title;
-    }
-
-    /**
-     * @param title the title to set
-     */
-    public void settitle(String title) {
+    public Party(String title, int numberPeoples){
         this.title = title;
+        this.numberPeoples = numberPeoples;
     }
 
 }

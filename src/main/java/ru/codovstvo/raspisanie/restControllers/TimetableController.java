@@ -20,28 +20,28 @@ public class TimetableController {
     @Autowired
     private TimetableRepo timetableRepo;
     
-    @PostMapping(value="/addentry")
-    public void addEntry(@RequestParam(value = "thing") String thing,
-                            @RequestParam(value = "party") String party,
-                            @RequestParam(value = "date") String date,
-                            @RequestParam(value = "audience") String audience,
-                            @RequestParam(value = "teacher") String teacher, Timetable timetable) {
-        timetableRepo.save(timetable);
+    @PostMapping(value="/add")
+    public void add(@RequestParam(value = "thing") Long thingId,
+                            @RequestParam(value = "party") Long partyId,
+                            @RequestParam(value = "audience") Long audienceId,
+                            @RequestParam(value = "teacher") Long teacherId,
+                            @RequestParam(value = "date") String date) {
+        timetableRepo.save(new Timetable(thingId, partyId, audienceId, teacherId, date));
     }
 
     @GetMapping(value="/getbydateandparty")
-    public Timetable getByDateAndParty(@RequestParam(value = "date") String date, @RequestParam(value = "party") String party) {
-        return timetableRepo.findByDateAndParty(date, party);
+    public Timetable getByDateAndPartyId(@RequestParam(value = "date") String date, @RequestParam(value = "partyid") Long partyId) {
+        return timetableRepo.findByDateAndPartyId(date, partyId);
     }
 
     @GetMapping(value="/getbydateandteacher")
-    public Timetable getByDateAndTeacher(@RequestParam(value = "date") String date, @RequestParam(value = "teacher") String teacher) {
-        return timetableRepo.findByDateAndTeacher(date, teacher);
+    public Timetable getByDateAndTeacherId(@RequestParam(value = "date") String date, @RequestParam(value = "teacherid") Long teacherId) {
+        return timetableRepo.findByDateAndTeacherId(date, teacherId);
     }
     
     @GetMapping(value="/byparty")
-    public List<Timetable> getTimetableByParty(@RequestParam String party) {
-        return timetableRepo.findByParty(party);
+    public List<Timetable> getTimetableByPartyId(@RequestParam Long partyId) {
+        return timetableRepo.findByPartyId(partyId);
     }
 
     @GetMapping(value="/bydate")
@@ -50,18 +50,18 @@ public class TimetableController {
     }
 
     @GetMapping(value="/byteacher")
-    public List<Timetable> getTimetableByTeacher(@RequestParam String teacher) {
-        return timetableRepo.findByParty(teacher);
+    public List<Timetable> getTimetableByTeacherId(@RequestParam Long teacherId) {
+        return timetableRepo.findByTeacherId(teacherId);
     }
 
     @GetMapping(value="/byaudience")
-    public List<Timetable> getTimetableByAudience(@RequestParam String audience) {
-        return timetableRepo.findByAudience(audience);
+    public List<Timetable> getTimetableByAudience(@RequestParam Long audienceId) {
+        return timetableRepo.findByAudienceId(audienceId);
     }
 
     @GetMapping(value="/bything")
-    public List<Timetable> getTimetableByThing(@RequestParam String thing) {
-        return timetableRepo.findByThing(thing);
+    public List<Timetable> getTimetableByThing(@RequestParam Long thingId) {
+        return timetableRepo.findByThingId(thingId);
     }
     
     @GetMapping(value="/all")
@@ -71,8 +71,8 @@ public class TimetableController {
     }
 
     @PostMapping(value="/dellbydateandparty")
-    public void delByDateAndParty(@RequestParam(value = "date") String date, @RequestParam(value = "party") String party) {
-        timetableRepo.deleteByDateAndParty(date, party);
+    public void delByDateAndParty(@RequestParam(value = "date") String date, @RequestParam(value = "partyid") Long partyId) {
+        timetableRepo.deleteByDateAndPartyId(date, partyId);
     }
     
     @PostMapping(value="/delltimetable")
