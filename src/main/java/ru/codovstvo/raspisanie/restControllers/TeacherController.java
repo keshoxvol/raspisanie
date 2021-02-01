@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TeacherController {
     
     @Autowired
-    private TeachersRepo teashersRepo;
+    private TeacherRepo teashersRepo;
     
     @GetMapping(value="/all")
-    public Iterable<Teachers> getAll() {
-        Iterable<Teachers> teachers = teashersRepo.findAll();
+    public Iterable<Teacher> getAll() {
+        Iterable<Teacher> teachers = teashersRepo.findAll();
         return teachers;
     }
 
     @PostMapping(value="/add")
     public void addTeacher(@RequestParam(value = "title")String title) {
-        teashersRepo.save(new Teachers(title));
+        teashersRepo.save(new Teacher(title));
     }
     
 }

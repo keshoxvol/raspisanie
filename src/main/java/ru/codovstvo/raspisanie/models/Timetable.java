@@ -1,33 +1,33 @@
-package ru.codovstvo.raspisanie.models;
+// package ru.codovstvo.raspisanie.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+// import javax.persistence.Entity;
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.GenerationType;
+// import javax.persistence.Id;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import java.lang.Long;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
+// import java.lang.Long;
 
-@Data
-@NoArgsConstructor
-@Entity
-public class Timetable {
-    @Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+// @Data
+// @NoArgsConstructor
+// @Entity
+// public class Timetable {
+//     @Id
+// 	@GeneratedValue(strategy=GenerationType.AUTO)
+//     private Long id;
 
-    private Long thingId;
-    private Long partyId;
-    private Long audienceId;
-    private Long teacherId;
-    private String date;
+//     private Thing thing;
+//     private Party party;
+//     private Long audienceId;
+//     private Teacher teacher;
+//     private String date;
 
-    public Timetable(Long thingId, Long partyId, Long audienceId, Long teacherId, String date) {
-        this.thingId = thingId;
-        this.partyId = partyId;
-        this.audienceId = audienceId;
-        this.teacherId = teacherId;
-        this.date = date;
-    }
-}
+//     public Timetable(Thing thing, Party party, Long audienceId, Teacher teacher, String date) {
+//         this.thing = thing;
+//         this.party = party;
+//         this.audienceId = audienceId;
+//         this.teacher = teacher;
+//         this.date = date;
+//     }
+// }

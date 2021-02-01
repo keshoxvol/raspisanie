@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+        integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <h3><a href="timetable.html">Расписание</a></h3>
+    <h3><a href="things.html">Добавить предмет</a></h3>
+    <h3><a href="teacher.html">Добавить преподавателя</a></h3>
+    <h3><a href="party.html">Добавить группу</a></h3>
+    <h1>Добавить предмет</h1>
+    <form action="http://localhost:8080/thing/add" class="postmethod" method="POST">
+        <input type="text" name="title" placeholder="Название предмета"><br>
+        <select type="text" name="teacherid">
+            <option value="" disabled selected>Выберите ID преподавателя</option>
+            <option value="1">1</option>
+        </select><br>
+        <input type="text" name="numberhours" placeholder="Колличество часов"><br>
+        <button type="submit">Добавить</button>
+    </form>
+    <ul id="resultsthings"></ul>   
+</body>
+
+</html>
