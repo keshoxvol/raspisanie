@@ -29,11 +29,27 @@ $(document).ready(function () {
         });
       });
     
+      jQuery.getJSON("http://localhost:8080/teacher/all", {
+      }, function(data) {
+        console.log(data);
+        jQuery.each(data, function(i, item) {
+                jQuery("#selectteachers").append("<option>" + item.id + "</option>");
+        });
+      });
+
     jQuery.getJSON("http://localhost:8080/party/all", {
     }, function(data) {
       console.log(data);
       jQuery.each(data, function(i, item) {
               jQuery("#resultsparty").append("<li>" + "Название предмета: " + item.title + " Колличество учащихся: " + item.numberPeoples +"</li>");
+      });
+    });
+
+    jQuery.getJSON("http://localhost:8080/party/all", {
+    }, function(data) {
+      console.log(data);
+      jQuery.each(data, function(i, item) {
+              jQuery("#selectparty").append("<option>" + item.id + "</option>");
       });
     });
 
@@ -45,11 +61,19 @@ $(document).ready(function () {
       });
     });
 
+    jQuery.getJSON("http://localhost:8080/thing/all", {
+    }, function(data) {
+      console.log(data);
+      jQuery.each(data, function(i, item) {
+              jQuery("#selectthing").append("<option>" + item.id + "</option>");
+      });
+    });
+
     jQuery.getJSON("http://localhost:8080/timetable/all", {
     }, function(data) {
       console.log(data);
       jQuery.each(data, function(i, item) {
-              jQuery("#resultstimetable").append("<li>" + "Id предмета: " + item.thingId + " Id группы: " + item.partyId + " Id аудитории:: " + item.audienceId + " Id преподавателя: " + item.teacherId + "</li>");
+              jQuery("#resultstimetable").append("<li>" + "Название предмета: " + item.thing.title + " Группа: " + item.party.title + " Аудитория: " + item.audienceId + " ФИО преподавателя: " + item.thing.teacher + " Дата: " + item.date + "</li>");
       });
     });
 

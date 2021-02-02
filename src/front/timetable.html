@@ -18,12 +18,12 @@
     <h3><a href="party.html">Добавить группу</a></h3>
     <h1>Расписание</h1>
     <form action="http://localhost:8080/timetable/add" class="postmethod" method="POST">
-        <input type="text" name="thing" placeholder="Id предмета"><br>
-        <input type="text" name="party" placeholder="Id группы"><br>
-        <input type="text" name="audience" placeholder="Id аудитории"><br>
-        <input type="text" name="teacher" placeholder="Id преподавателя"><br>
+        <h3>Выбирете предмет</h3><select type="text" name="thingid" id="selectthing">
+        </select><br>
+        <h3>Выбирете группу</h3><select type="text" name="partyid" id="selectparty">
+        </select><br><br>
+        <input type="text" name="audience" placeholder="Аудитория"><br>
         <input type="text" name="date" placeholder="Дата"><br>
-        <input type="text" name="numberhours" placeholder="Колличество часов"><br>
         <button type="submit">Добавить</button>
     </form>
     <ul id="resultstimetable"></ul>  

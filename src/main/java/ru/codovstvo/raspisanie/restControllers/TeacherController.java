@@ -28,5 +28,10 @@ public class TeacherController {
     public void addTeacher(@RequestParam(value = "title")String title) {
         teashersRepo.save(new Teacher(title));
     }
+
+    @PostMapping(value="delall")
+    public void delTeachers(){
+        teashersRepo.deleteAll();
+    }
     
 }

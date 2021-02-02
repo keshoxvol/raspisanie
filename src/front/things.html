@@ -19,9 +19,7 @@
     <h1>Добавить предмет</h1>
     <form action="http://localhost:8080/thing/add" class="postmethod" method="POST">
         <input type="text" name="title" placeholder="Название предмета"><br>
-        <select type="text" name="teacherid">
-            <option value="" disabled selected>Выберите ID преподавателя</option>
-            <option value="1">1</option>
+        <select type="text" name="teacherid" id="selectteachers">
         </select><br>
         <input type="text" name="numberhours" placeholder="Колличество часов"><br>
         <button type="submit">Добавить</button>
